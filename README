@@ -1,0 +1,6 @@
+Installation
+
+    Clone the git Repo
+
+Create Symlink:
+    ln -s ~/.vim/vimrc ~/.vimrc
