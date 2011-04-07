@@ -1,6 +1,7 @@
 Installation
 
-    Clone the git Repo
+    Clone the git Repo into wherever, preferably your home dir
+    I leave the . at the start so the folder is hidden
 
-Create Symlink:
-    ln -s ~/.vim/vimrc ~/.vimrc
+Create Symlinks:
+    run 'python symlink_dotfiles.py' it won't overwrite any existing files so if they exist remove them from the home dir first
