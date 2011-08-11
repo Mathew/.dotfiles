@@ -96,3 +96,7 @@ nnoremap <F1> :set invfullscreen<CR>
 vnoremap <F1> :set invfullscreen<CR>
 
 set t_Co=256
+
+if has("gui_running")
+    set guioptions=egmrt
+endif
