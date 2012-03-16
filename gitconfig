@@ -3,3 +3,11 @@
 	email = mat@mathewtaylor.co.uk
 [core]
 	excludesfile = /Users/Mathew/.dotfiles/.gitignore
+[alias]
+    st = status -s
+    ci = commit
+    co = checkout
+    di = diff
+    br = branch
+    lg = log --graph --decorate --pretty=oneline --abbrev-commit
+    lga = log --graph --decorate --pretty=oneline --abbrev-commit --all
