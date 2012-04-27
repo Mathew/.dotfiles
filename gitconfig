@@ -11,3 +11,4 @@
     br = branch
     lg = log --graph --decorate --pretty=oneline --abbrev-commit
     lga = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	amend = commit --amend
