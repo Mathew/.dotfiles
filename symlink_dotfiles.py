@@ -6,7 +6,7 @@ import os
 import shutil
 import sys
 
-files_to_link = ['gitconfig', 'profile', 'vimrc', 'vim']
+files_to_link = ['gitconfig', 'profile', ]
 #get home dir
 home_dir = os.path.expanduser('~')
 #path where the dotfiles are (assuming the script hasn't been moved)
@@ -25,20 +25,3 @@ for file in files_to_link:
             "{0}/.{1}".format(home_dir, file)
         )
 
-# sublime text setting sit in it's own directory so we'll do this
-# seperately
-sublime_path = "{0}/Library/Application Support/Sublime Text 2/Packages/User".format(home_dir)
-os.symlink(
-    "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl",
-    "{0}/bin/subl".format(home_dir)
-)
-
-#delete then copy, st2 doesn't work with a symlink
-try:
-    shutil.rmtree(sublime_path)
-except OSError, e:
-    print e
-shutil.copytree(
-    "{0}/{1}".format(dotfiles_path, 'sublime_settings'),
-    sublime_path
-)

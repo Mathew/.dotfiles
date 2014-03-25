@@ -1,4 +1,0 @@
-[
-    { "keys": ["ctrl+shift+enter"], "command": "select_lines", "args": {"forward": false} },
-    { "keys": ["super+b"], "command": "toggle_side_bar" }
-]
