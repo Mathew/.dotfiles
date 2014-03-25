@@ -3,17 +3,26 @@
 	email = mat@mathewtaylor.co.uk
 [core]
 	excludesfile = /Users/Mathew/.dotfiles/.gitignore
+    editor = "subl -n -w"
 [alias]
     st = status -s
     ci = commit
     co = checkout
-    di = diff
+    di = diff --color
     br = branch
     lg = log --graph --decorate --pretty=oneline --abbrev-commit
     lga = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lgg = log --graph --decorate --pretty=oneline --abbrev-commit --color --all
 	amend = commit --amend
+    con = diff --name-only --diff-filter=U
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
+[difftool "diffmerge"]
+	cmd = diffmerge $LOCAL $REMOTE
 [merge]
 	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[diff]
+	tool = diffmerge
