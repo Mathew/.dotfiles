@@ -1,8 +1,5 @@
-filetype off
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
-
 set nocompatible
+filetype off
 
 set modelines=0
 
@@ -81,22 +78,15 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-Tab> :bnext<CR>
 nnoremap <C-S-Tab> :bprevious<CR>
 
-colorscheme molokai
-
-let NERDTreeIgnore=['\.pyc']
-
 nnoremap <leader>U :GundoToggle<CR>
 
 set ofu=syntaxcomplete#Complete
+syntax enable
 
 " Fuck you, help key.
-set fuoptions=maxvert,maxhorz
 inoremap <F1> <ESC>:set invfullscreen<CR>a
 nnoremap <F1> :set invfullscreen<CR>
 vnoremap <F1> :set invfullscreen<CR>
 
 set t_Co=256
 
-if has("gui_running")
-    set guioptions=egmrt
-endif
