@@ -15,23 +15,30 @@ dotfiles_path = sys.path[0]
 for file in files_to_link:
     #for each file, check if it exists, if so do nothing since
     #we don't want to destroy someone's files
-    if os.path.exists(home_dir + '/.' + file):
-        print '%s already exists' % file
+    if os.path.exists("{0}/.{1}".format(home_dir, file)):
+        print "{0} already exists".format(file)
     else:
         #print message to display link, then link
-        print 'linking %s/.%s to %s/%s' % (home_dir,
-            file, dotfiles_path, file)
-        os.symlink('%s/%s' % (dotfiles_path, file),
-            '%s/.%s' % (home_dir, file))
+        print "linking {0}/.{1} to {3}/{1}".format(home_dir, file, dotfiles_path)
+        os.symlink(
+            "{0}/{1}".format(dotfiles_path, file),
+            "{0}/.{1}".format(home_dir, file)
+        )
 
 # sublime text setting sit in it's own directory so we'll do this
 # seperately
-sublime_path = '{0}/Library/Application Support/Sublime Text 2/Packages/User'.format(home_dir)
+sublime_path = "{0}/Library/Application Support/Sublime Text 2/Packages/User".format(home_dir)
+os.symlink(
+    "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl",
+    "{0}/bin/subl".format(home_dir)
+)
 
 #delete then copy, st2 doesn't work with a symlink
 try:
     shutil.rmtree(sublime_path)
 except OSError, e:
     print e
-shutil.copytree("{0}/{1}".format(dotfiles_path, 'sublime_settings'),
-    sublime_path)
+shutil.copytree(
+    "{0}/{1}".format(dotfiles_path, 'sublime_settings'),
+    sublime_path
+)
