@@ -2,7 +2,7 @@
 	name = Mathew Taylor
 	email = mat@mathewtaylor.co.uk
 [core]
-	excludesfile = /Users/Mathew/.dotfiles/.gitignore
+	excludesfile = /Users/Mathew/.dotfiles/globalgitignore
     editor = "subl -n -w"
 [alias]
     st = status -s
