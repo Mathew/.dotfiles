@@ -1,0 +1,20 @@
+[
+    {
+        "keys": ["ctrl+a", "b"],
+        "command": "toggle_side_bar"
+    },
+    {
+        "keys": ["ctrl+super+up"],
+        "command": "select_lines",
+        "args": {"forward": false}
+    },
+    {
+        "keys": ["ctrl+super+down"],
+        "command": "select_lines",
+        "args": {"forward": true}
+    },
+    { "keys": ["ctrl+a", "h"], "command": "focus_neighboring_group", "args": {"forward": false} },
+    { "keys": ["ctrl+a", "l"], "command": "focus_neighboring_group" },
+    { "keys": ["ctrl+h"], "command": "dash_doc",
+                            "args": { "syntax_sensitive": true } }
+]
