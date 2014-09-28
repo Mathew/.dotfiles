@@ -1,0 +1,47 @@
+{
+    "default_module": "powerline.segments.common",
+    "segment_data": {
+        "uptime": {
+            "before": "⇑  "
+        },
+        "external_ip": {
+            "before": "ⓦ  "
+        },
+        "date": {
+            "before": "⌚ "
+        },
+        "email_imap_alert": {
+            "before": "✉ ",
+            "args": {
+                "username": "",
+                "password": ""
+            }
+        }
+    },
+    "segments": {
+        "left": [],
+        "right": [
+            {
+                "name": "mac_now_playing",
+                "module": "ext.tmux.segments.mat",
+                "args": {
+                    "player": "spotify_mac"
+                }
+            },
+            {
+                "name": "date",
+                "args": {
+                    "format": "%Y-%m-%d %H:%M",
+                    "istime": true
+                }
+            },
+            {
+                "name": "user_hostname",
+                "module": "ext.tmux.segments.mat",
+                "args": {
+                    "exclude_domain": true
+                }
+            }
+        ]
+    }
+}
