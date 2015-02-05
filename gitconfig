@@ -26,3 +26,5 @@
 	keepBackup = false
 [diff]
 	tool = diffmerge
+[init]
+	templatedir = /Users/mathew/.dotfiles/git_template
