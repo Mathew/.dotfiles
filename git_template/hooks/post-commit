@@ -1,0 +1,6 @@
+#!/bin/sh
+### lolcommits hook (begin) ###
+export LANG="en_GB.UTF-8"
+export PATH="/usr/bin:/usr/local/bin:$PATH"
+lolcommits --capture
+###  lolcommits hook (end)  ###
