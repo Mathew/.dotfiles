@@ -1,6 +1,3 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -42,13 +39,11 @@ ZSH_THEME="mat"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git brew github osx pip python sublime tmux vagrant virtualenvwrapper zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
 source /usr/local/bin/virtualenvwrapper.sh
-source ~/bin/tmuxinator.zsh
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/lib:/Users/mathew/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-export EDITOR='subl -w'
+export EDITOR='vim'
 
 # Aliases
 alias g=git
@@ -57,3 +52,5 @@ alias v=vim
 alias va=vagrant
 alias tx=tmux
 alias txr=tmuxinator
+alias doco=docker-compose
+eval $(/usr/libexec/path_helper -s)

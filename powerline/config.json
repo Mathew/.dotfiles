@@ -19,7 +19,7 @@
 	"ext": {
 		"tmux": {
 			"colorscheme": "default",
-			"theme": "mat"
+			"theme": "default"
 		}
 	}
 }

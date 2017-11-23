@@ -3,7 +3,7 @@
 	email = mat@mathewtaylor.co.uk
 [core]
 	excludesfile = /Users/Mathew/.dotfiles/globalgitignore
-    editor = "subl -n -w"
+	editor = "vi"
 [alias]
     st = status -s
     ci = commit
@@ -28,3 +28,7 @@
 	tool = diffmerge
 [init]
 	templatedir = /Users/mathew/.dotfiles/git_template
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
