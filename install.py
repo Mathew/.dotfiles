@@ -123,6 +123,8 @@ REQUIRED_APPS = (
     HomebrewApplication("gopls"),
     HomebrewApplication("nvim"),
     HomebrewApplication("alacritty"),
+    HomebrewApplication("fish"),
+    HomebrewApplication("starship"),
     HomebrewApplication("ripgrep", install_name="rg"),
     HomebrewApplication("font-roboto-mono-nerd-font", cask=True),
 )
