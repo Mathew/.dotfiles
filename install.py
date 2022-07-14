@@ -131,6 +131,9 @@ SYMLINKS = (
     Symlink("~/.config/nvim", "nvim/.config"),
     Symlink("~/.tmux.conf", "tmux/tmux.conf"),
     Symlink("~/.config/bin", "bin"),
+    Symlink("~/.config/alacritty", "alacritty"),
+    Symlink("~/.config/fish", "fish"),
+    Symlink("~/.config/starship.toml", "starship/starship.toml"),
 )
 
 
