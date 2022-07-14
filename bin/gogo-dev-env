@@ -1,0 +1,27 @@
+#!/usr/bin/env fish
+
+# Replace . with _ before tmux does it to us.
+set foldername (basename $(pwd) | sed -e "s/\./_/")
+
+if not tmux has-session -t $foldername &> /dev/null
+        tmux new-session -d -x- -y- -s $foldername
+        tmux split-window -d -h -c "#{pane_current_path}" -t $foldername 
+        tmux split-window -d -h -c "#{pane_current_path}" -t $foldername
+
+        # specify pane with the format {session:window.pane_number}
+        tmux resize-pane -t $foldername:1.1 -x 125 
+        tmux resize-pane -t $foldername:1.3 -x 125
+        tmux select-pane -t $foldername:1.2
+        tmux send-keys -t $foldername:1.1 "tree --gitignore ." ENTER
+        tmux send-keys -t $foldername:1.2 "v ." ENTER
+end
+
+
+# Check if Tmux is already running (i.e. we're in a session) and switch if so,
+# else attach to the newly created session.
+if set -q TMUX[1]
+            tx switch-client -t $foldername
+else
+            tmux attach-session -d -t $foldername
+end
+

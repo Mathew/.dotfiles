@@ -1,0 +1,10 @@
+#!/usr/bin/env fish
+
+set workspace (find ~/Code/fanduel ~/Code/aThroatyMewl -mindepth 1 -maxdepth 1 -type d | fzf)
+
+if set -q workspace[1]
+    cd $workspace
+    gogo-dev-env
+end
+
+
