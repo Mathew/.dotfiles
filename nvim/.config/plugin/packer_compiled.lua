@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/Users/mathewtaylor/.local/share/nvim/site/pack/packer/start/nvim-test",
     url = "https://github.com/klen/nvim-test"
   },
+  ["nvim-tmux-navigation"] = {
+    loaded = true,
+    path = "/Users/mathewtaylor/.local/share/nvim/site/pack/packer/start/nvim-tmux-navigation",
+    url = "https://github.com/alexghergh/nvim-tmux-navigation"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/mathewtaylor/.local/share/nvim/site/pack/packer/start/nvim-treesitter",

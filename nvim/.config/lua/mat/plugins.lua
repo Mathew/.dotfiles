@@ -51,4 +51,7 @@ return require("packer").startup(function()
         "ThePrimeagen/harpoon",
         requires = { {"nvim-lua/plenary.nvim"} }
     })
+
+    -- Tmux / nvim window compat.
+    use ('alexghergh/nvim-tmux-navigation')
 end)
