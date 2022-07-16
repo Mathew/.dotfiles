@@ -130,7 +130,7 @@ REQUIRED_APPS = (
 )
 
 SYMLINKS = (
-    Symlink("~/.config/nvim", "nvim/.config"),
+    Symlink("~/.config/nvim", "nvim/config"),
     Symlink("~/.tmux.conf", "tmux/tmux.conf"),
     Symlink("~/.config/bin", "bin"),
     Symlink("~/.config/alacritty", "alacritty"),
