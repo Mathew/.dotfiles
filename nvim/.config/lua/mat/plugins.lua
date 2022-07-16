@@ -53,5 +53,8 @@ return require("packer").startup(function()
     })
 
     -- Tmux / nvim window compat.
-    use ('alexghergh/nvim-tmux-navigation')
+    use ("alexghergh/nvim-tmux-navigation")
+
+    -- Tree for current buffer symbols.
+    use ("simrat39/symbols-outline.nvim")
 end)

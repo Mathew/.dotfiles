@@ -1,7 +1,6 @@
 map("n", "<Leader>p", "<cmd>lua require('telescope.builtin').find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", { silent = true})
 map("n", "<Leader>P", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>", { silent = true})
 map("n", "<Leader>l", "<cmd>lua require('telescope.builtin').oldfiles({ cwd_only = true })<cr>", { silent = true})
-map("n", "<Leader>B", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", { silent = true})
 map("n", "<Leader>f", "<cmd>lua require('telescope.builtin').live_grep()<cr>", {}) 
 map("n", "<Leader>D", "<cmd>lua require('telescope.builtin').diagnostics()<cr>", { silent = true})
 
