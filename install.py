@@ -136,6 +136,8 @@ SYMLINKS = (
     Symlink("~/.config/alacritty", "alacritty"),
     Symlink("~/.config/fish", "fish"),
     Symlink("~/.config/starship.toml", "starship/starship.toml"),
+    Symlink("~/.gitconfig", "git/gitconfig"),
+    Symlink("~/.gitignore", "git/gitignore"),
 )
 
 

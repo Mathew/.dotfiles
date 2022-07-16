@@ -1,0 +1,37 @@
+[user]
+	name = Mathew Taylor
+	email = mat@mathewtaylor.co.uk
+[core]
+	excludesfile = ~/.gitignore
+	editor = "vi"
+[alias]
+    st = status -s
+    ci = commit
+    co = checkout
+    di = diff --color
+    br = branch
+    lg = log --graph --decorate --pretty=oneline --abbrev-commit
+    lga = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lgg = log --graph --decorate --pretty=oneline --abbrev-commit --color --all
+	amend = commit --amend
+    con = diff --name-only --diff-filter=U
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
+[difftool "diffmerge"]
+	cmd = diffmerge $LOCAL $REMOTE
+[merge]
+	tool = diffmerge
+[mergetool]
+	keepBackup = false
+[diff]
+	tool = diffmerge
+[init]
+	templatedir = /Users/mathew/.dotfiles/git_template
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[credential]
+	helper = osxkeychain
