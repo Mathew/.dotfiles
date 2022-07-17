@@ -57,4 +57,10 @@ return require("packer").startup(function()
 
     -- Tree for current buffer symbols.
     use ("simrat39/symbols-outline.nvim")
+
+    -- Dash.app needs intalled on osx - seaches language docs.
+    use({
+        'mrjones2014/dash.nvim',
+        run = 'make install',
+    })
 end)

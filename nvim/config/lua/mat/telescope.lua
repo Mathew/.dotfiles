@@ -3,6 +3,7 @@ map("n", "<Leader>P", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspa
 map("n", "<Leader>l", "<cmd>lua require('telescope.builtin').oldfiles({ cwd_only = true })<cr>", { silent = true})
 map("n", "<Leader>f", "<cmd>lua require('telescope.builtin').live_grep()<cr>", {}) 
 map("n", "<Leader>D", "<cmd>lua require('telescope.builtin').diagnostics()<cr>", { silent = true})
+map("n", "<Leader>k", "<cmd>Telescope dash search<CR>", {})
 
 map("n", "<Leader>gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", {})
 map("n", "<Leader>gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", {})
