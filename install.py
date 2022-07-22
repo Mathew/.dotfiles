@@ -58,7 +58,7 @@ class HomebrewApplication(Application):
         return install(run, f"brew install {opts}{self.name}")()
 
     def check_install(self) -> CommandResult:
-        return check_install(executable_on_path_exists, self.install_name if self.install_name else self.name)()
+        return check_install(run, f"brew list {self.install_name if self.install_name else self.name} -1")()
 
 
 def run(cmd) -> CommandResult:
@@ -108,12 +108,34 @@ class Symlink:
         return CommandResult(True, f"Created {self.dir_to_symlink}")
 
 
-   
+SYSTEM_APPS = [
+    SystemApplication(
+        "brew", 
+        check_install(executable_on_path_exists, "brew"), 
+        ["/bin/bash", "-c NONINTERACTIVE=1", "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"]
+    ),
+    HomebrewApplication("spotify", cask=True),
+    HomebrewApplication("zoom", cask=True),
+    HomebrewApplication("google-chrome", cask=True),
+    HomebrewApplication("slack", cask=True),
+    HomebrewApplication("notion", cask=True),
+    HomebrewApplication("rectangle", cask=True),
+    HomebrewApplication("dropbox", cask=True),
+    HomebrewApplication("authy", cask=True),
+    HomebrewApplication("nordpass", cask=True),
+]
 
-REQUIRED_APPS = (
-    SystemApplication("brew", check_install(executable_on_path_exists, "brew"), ["/bin/bash", "-c NONINTERACTIVE=1", "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"]),
+
+DEV_EX_APPS = [
     HomebrewApplication("tmux"),
-    SystemApplication("packer", check_install(directory_exists, "~/.local/share/nvim/site/pack/packer/start/packer.nvim"), ["git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim"]),
+    SystemApplication(
+        "packer", 
+        check_install(
+            directory_exists, 
+            "~/.local/share/nvim/site/pack/packer/start/packer.nvim"
+        ), 
+        ["git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim"]
+    ),
     HomebrewApplication("fzf"),
     HomebrewApplication("tree"),
     HomebrewApplication("fd"),
@@ -127,9 +149,13 @@ REQUIRED_APPS = (
     HomebrewApplication("starship"),
     HomebrewApplication("ripgrep", install_name="rg"),
     HomebrewApplication("font-roboto-mono-nerd-font", cask=True),
-)
+    HomebrewApplication("docker", cask=True),
+]
+   
 
-SYMLINKS = (
+REQUIRED_APPS = SYSTEM_APPS + DEV_EX_APPS
+
+SYMLINKS = [
     Symlink("~/.config/nvim", "nvim/config"),
     Symlink("~/.tmux.conf", "tmux/tmux.conf"),
     Symlink("~/.config/bin", "bin"),
@@ -138,7 +164,7 @@ SYMLINKS = (
     Symlink("~/.config/starship.toml", "starship/starship.toml"),
     Symlink("~/.gitconfig", "git/gitconfig"),
     Symlink("~/.gitignore", "git/gitignore"),
-)
+]
 
 
 def setup():
