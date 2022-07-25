@@ -1,7 +1,7 @@
 import subprocess
 from abc import ABC, abstractmethod 
 from dataclasses import dataclass
-from typing import Callable
+from typing import Callable, List
 from pathlib import Path, PosixPath
 
 
@@ -25,7 +25,7 @@ class Application(ABC):
 class SystemApplication(Application):
     name: str
     check_install_cmd: Callable
-    run_cmd: list[str]
+    run_cmd: List[str]
         
     def install(self) -> CommandResult:
         return install(run, self.run_cmd)()
@@ -109,15 +109,11 @@ class Symlink:
 
 
 SYSTEM_APPS = [
-    SystemApplication(
-        "brew", 
-        check_install(executable_on_path_exists, "brew"), 
-        ["/bin/bash", "-c NONINTERACTIVE=1", "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"]
-    ),
     HomebrewApplication("spotify", cask=True),
-    HomebrewApplication("zoom", cask=True),
-    HomebrewApplication("google-chrome", cask=True),
-    HomebrewApplication("slack", cask=True),
+    #Pre-installed by IT.
+    #HomebrewApplication("zoom", cask=True),
+    #HomebrewApplication("google-chrome", cask=True),
+    #HomebrewApplication("slack", cask=True),
     HomebrewApplication("notion", cask=True),
     HomebrewApplication("rectangle", cask=True),
     HomebrewApplication("dropbox", cask=True),
@@ -137,6 +133,7 @@ DEV_EX_APPS = [
         ["git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim"]
     ),
     HomebrewApplication("fzf"),
+    HomebrewApplication("dash", cask=True),
     HomebrewApplication("tree"),
     HomebrewApplication("fd"),
     HomebrewApplication("python3"),

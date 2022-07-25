@@ -1,6 +1,7 @@
 set PATH ~/.config/bin $PATH
-set PATH /Users/mathewtaylor/Library/Python/3.9/bin $PATH
 set PATH ~/go/bin $PATH
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 alias vi 'nvim'
 alias vim 'nvim'
