@@ -1,5 +1,6 @@
 set PATH ~/.config/bin $PATH
 set PATH ~/go/bin $PATH
+set PATH ~/.local/bin $PATH
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
