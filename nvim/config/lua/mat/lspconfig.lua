@@ -61,6 +61,8 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+
+--[[
 require("lspconfig").gopls.setup({
     on_attach = function()
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
@@ -69,6 +71,7 @@ require("lspconfig").gopls.setup({
     end,
     capabilities = capabilities,
 })
+--]]
 
 require("lspconfig").pyright.setup({
     on_attach = function()

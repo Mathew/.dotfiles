@@ -63,4 +63,8 @@ return require("packer").startup(function()
         'mrjones2014/dash.nvim',
         run = 'make install',
     })
+
+    -- Better Go Support
+    use("ray-x/guihua.lua")
+    use("ray-x/go.nvim")
 end)
