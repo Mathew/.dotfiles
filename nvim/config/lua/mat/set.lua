@@ -16,6 +16,8 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
+vim.api.nvim_set_option("clipboard","unnamed")
+
 
 vim.api.nvim_command([[
     autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab

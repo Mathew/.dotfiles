@@ -18,3 +18,4 @@ eval (starship init fish)
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 
 source /Users/mat/.docker/init-fish.sh || true # Added by Docker Desktop
+

@@ -16,5 +16,7 @@ require('go').setup({
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
         vim.keymap.set("n", "<Leader>r", "<cmd>GoRename<cr>", {buffer=0})
         vim.keymap.set("n", "<leader>a", "<cmd>GoCodeAction<cr>", {buffer=0})
+        vim.keymap.set("n", "<leader>At", "<cmd>GoAddTag<cr>", {buffer=0})
+        vim.keymap.set("n", "<leader>AT", "<cmd>GoRmTag<cr>", {buffer=0})
     end,
 })
