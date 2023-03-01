@@ -67,4 +67,7 @@ return require("packer").startup(function()
     -- Better Go Support
     use("ray-x/guihua.lua")
     use("ray-x/go.nvim")
+
+    -- Symbols in the gutter for highlighting changes.
+    use("airblade/vim-gitgutter")
 end)
