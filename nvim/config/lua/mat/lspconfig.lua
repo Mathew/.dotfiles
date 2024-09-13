@@ -65,17 +65,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 
---[[
-require("lspconfig").gopls.setup({
-    on_attach = function()
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
-        vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, {buffer=0})
-        vim.keymap.set("n", "<Leader>a", vim.lsp.buf.code_action, {buffer=0})
-    end,
-    capabilities = capabilities,
-})
---]]
-
 require("lspconfig").pyright.setup({
     on_attach = function()
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
@@ -93,4 +82,22 @@ require("lspconfig").pyright.setup({
     end,
     capabilities = capabilities,
 })
+
+
+require'lspconfig'.ts_ls.setup{
+  init_options = {},
+  filetypes = {
+    "javascript",
+    "typescript",
+  },
+  settings = {
+      javascript = {
+          format = {
+              indentSize = 2,
+              tabSize = 2,
+              convertTabsToSpaces = true
+          }
+      }
+  }
+}
 

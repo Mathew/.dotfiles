@@ -117,7 +117,6 @@ SYSTEM_APPS = [
     HomebrewApplication("notion", cask=True),
     HomebrewApplication("rectangle", cask=True),
     HomebrewApplication("dropbox", cask=True),
-    HomebrewApplication("authy", cask=True),
     HomebrewApplication("nordpass", cask=True),
 ]
 
@@ -140,6 +139,8 @@ DEV_EX_APPS = [
     HomebrewApplication("pyright"),
     HomebrewApplication("go"),
     HomebrewApplication("gopls"),
+    HomebrewApplication("typescript"),
+    HomebrewApplication("typescript-language-server"),
     HomebrewApplication("nvim"),
     HomebrewApplication("alacritty"),
     HomebrewApplication("fish"),
