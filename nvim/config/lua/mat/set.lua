@@ -28,7 +28,7 @@ vim.api.nvim_command([[
 
 
 -- Automatically format file based on LSP if available.
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 -- Debug function
 function P(item) 

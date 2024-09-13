@@ -15,6 +15,7 @@ cmp.setup({
         end,
     },
     sources = cmp.config.sources({
+        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "nvim_lsp_signature_help" },
         { name = "buffer" },
@@ -24,7 +25,7 @@ cmp.setup({
     }),
     mapping = cmp.mapping.preset.insert({
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({select = true}),
+        ['<CR>'] = cmp.mapping.confirm({select = false}),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -51,6 +52,8 @@ cmp.setup({
         format = lspkind.cmp_format({
             mode = "symbol",
             maxwidth = 50,
+            ellipsis_char = '...',
+            symbol_map = { Copilot = "" }
         }),
     },
 })

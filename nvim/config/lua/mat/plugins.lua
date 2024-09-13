@@ -70,4 +70,8 @@ return require("packer").startup(function()
 
     -- Symbols in the gutter for highlighting changes.
     use("airblade/vim-gitgutter")
+
+    -- Copilot
+    use("zbirenbaum/copilot.lua")
+    use("zbirenbaum/copilot-cmp")
 end)
