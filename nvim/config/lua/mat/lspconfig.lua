@@ -64,8 +64,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+local lspconfig = require("lspconfig")
 
-require("lspconfig").pyright.setup({
+lspconfig.pyright.setup({
     on_attach = function()
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
         vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, {buffer=0})
@@ -83,8 +84,7 @@ require("lspconfig").pyright.setup({
     capabilities = capabilities,
 })
 
-
-require'lspconfig'.ts_ls.setup{
+lspconfig.ts_ls.setup{
   init_options = {},
   filetypes = {
     "javascript",
@@ -101,3 +101,9 @@ require'lspconfig'.ts_ls.setup{
   }
 }
 
+lspconfig.gdscript.setup{
+    cmd = { "nc", "127.0.0.1", "6005"},
+    filetypes = { "gd", "gdscript", "gdscript3" },
+    root_dir = lspconfig.util.root_pattern("project.godot", ".git"),
+    single_file_support = true
+}

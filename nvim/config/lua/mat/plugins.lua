@@ -5,11 +5,15 @@ return require("packer").startup(function()
     -- Theme
     use("folke/tokyonight.nvim")
 
+    -- Godot support
+    use("habamax/vim-godot")
+
     -- Popup fuzzy finder.
     use({
         "nvim-telescope/telescope.nvim",
         requires = { {"nvim-lua/plenary.nvim"} }
     })
+
 
     -- Better Syntax highlighting (and more).
     use({
