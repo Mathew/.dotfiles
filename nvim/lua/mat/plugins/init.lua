@@ -1,3 +1,15 @@
+require("mat.plugins.telescope")
+require("mat.plugins.treesitter")
+require("mat.plugins.cmp")
+require("mat.plugins.lspconfig")
+require("mat.plugins.harpoon")
+require("mat.plugins.outline")
+require("mat.plugins.copilot")
+require("mat.plugins.go")
+require("mat.plugins.testing")
+require("mat.plugins.tokyonight")
+require("mat.plugins.tmuxnav")
+
 return require("packer").startup(function()
     -- Plugin manager.
     use("wbthomason/packer.nvim")
@@ -60,7 +72,7 @@ return require("packer").startup(function()
     use ("alexghergh/nvim-tmux-navigation")
 
     -- Tree for current buffer symbols.
-    use ("simrat39/symbols-outline.nvim")
+    -- use ("hedyhli/outline.nvim")
 
     -- Dash.app needs intalled on osx - seaches language docs.
     use({

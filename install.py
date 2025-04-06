@@ -1,8 +1,8 @@
 import subprocess
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Callable, List
 from pathlib import Path, PosixPath
+from typing import Callable, List
 
 
 @dataclass
@@ -168,7 +168,7 @@ DEV_EX_APPS = [
 REQUIRED_APPS = SYSTEM_APPS + DEV_EX_APPS
 
 SYMLINKS = [
-    Symlink("~/.config/nvim", "nvim/config"),
+    Symlink("~/.config/nvim", "nvim"),
     Symlink("~/.tmux.conf", "tmux/tmux.conf"),
     Symlink("~/.config/bin", "bin"),
     Symlink("~/.config/alacritty", "alacritty"),
