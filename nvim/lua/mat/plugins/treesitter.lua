@@ -1,5 +1,5 @@
 require "nvim-treesitter.configs".setup {
-    ensure_installed = { "go", "python", "rust", "graphql", "http", "html", "javascript", "json", "svelte", "typescript", "vim", "lua", "gdscript" },
+    ensure_installed = { "go", "python", "rust", "graphql", "http", "html", "javascript", "json", "svelte", "typescript", "vim", "lua", "gdscript", "query", },
 
     highlight = {
         enable = true,
