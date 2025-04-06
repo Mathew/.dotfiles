@@ -82,7 +82,26 @@ lspconfig.pyright.setup({
         end
     end,
     capabilities = capabilities,
+    settings = {
+        pyright = {
+            disableOrganizeImports = true,
+        },
+        python = {
+            analysis = {
+                ignore = {'*'},
+            },
+        },
+    }
 })
+
+lspconfig.ruff.setup {
+    init_options = {
+        settings = {
+            args = { "--line-length=88" },
+            inlay_hints = true,
+        }
+    }
+}
 
 lspconfig.ts_ls.setup{
   init_options = {},

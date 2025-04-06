@@ -6,7 +6,7 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 require('go').setup({
     lsp_cfg={capabilities=capabilities},
     luasnip=true,
-    goimport="gopls",
+    goimports="gopls",
     fillstruct="gopls",
     gofmt = "gofumpt",
     comment_placeholder = "",
