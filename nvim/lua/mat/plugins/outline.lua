@@ -1,7 +1,7 @@
 vim.keymap.set("n", "<leader>B", "<cmd>Outline<CR>")
 
 require("outline").setup {
-    outline_window = {position = "left",},
+    outline_window = {position = "right",},
     preview_window = {
         auto_preview = true,
     }
