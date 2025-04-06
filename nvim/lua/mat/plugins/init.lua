@@ -72,7 +72,7 @@ return require("packer").startup(function()
     use ("alexghergh/nvim-tmux-navigation")
 
     -- Tree for current buffer symbols.
-    -- use ("hedyhli/outline.nvim")
+    use ("hedyhli/outline.nvim")
 
     -- Dash.app needs intalled on osx - seaches language docs.
     use({
