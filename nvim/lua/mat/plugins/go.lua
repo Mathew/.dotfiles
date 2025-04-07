@@ -8,7 +8,7 @@ require('go').setup({
     luasnip=true,
     goimports="gopls",
     fillstruct="gopls",
-    gofmt = "gofumpt",
+    gofmt = "gopls",
     comment_placeholder = "",
     lsp_gofumpt=false,
     lsp_codelens=true,

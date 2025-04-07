@@ -162,6 +162,7 @@ DEV_EX_APPS = [
     HomebrewApplication("ripgrep", install_name="rg"),
     HomebrewApplication("font-roboto-mono-nerd-font", cask=True),
     HomebrewApplication("docker", cask=True),
+    HomebrewApplication("hammerspoon", cask=True),
 ]
 
 
@@ -176,6 +177,7 @@ SYMLINKS = [
     Symlink("~/.config/starship.toml", "starship/starship.toml"),
     Symlink("~/.gitconfig", "git/gitconfig"),
     Symlink("~/.gitignore", "git/gitignore"),
+    Symlink("~/.hammerspoon", "hammerspoon"),
 ]
 
 
