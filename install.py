@@ -44,15 +44,9 @@ def executable_on_path_exists(executable_name: str) -> CommandResult:
 class HomebrewApplication(Application):
     name: str
     cask: bool = False
-    tapper: str = "homebrew/cask-fonts"
     install_name: str = ""
 
     def install(self) -> CommandResult:
-        if self.tapper:
-            result = run(f"brew tap {self.tapper}")
-            if not result.ok:
-                return result
-
         opts = "" if not self.cask else "--cask "
         return install(run, f"brew install {opts}{self.name}")()
 
@@ -126,10 +120,10 @@ SYSTEM_APPS = [
     # HomebrewApplication("zoom", cask=True),
     # HomebrewApplication("google-chrome", cask=True),
     # HomebrewApplication("slack", cask=True),
-    HomebrewApplication("notion", cask=True),
+    # HomebrewApplication("notion", cask=True),
     HomebrewApplication("rectangle", cask=True),
     HomebrewApplication("dropbox", cask=True),
-    HomebrewApplication("nordpass", cask=True),
+    # HomebrewApplication("nordpass", cask=True),
 ]
 
 
@@ -161,8 +155,8 @@ DEV_EX_APPS = [
     HomebrewApplication("starship"),
     HomebrewApplication("ripgrep", install_name="rg"),
     HomebrewApplication("font-roboto-mono-nerd-font", cask=True),
-    HomebrewApplication("docker", cask=True),
-    HomebrewApplication("hammerspoon", cask=True),
+    # HomebrewApplication("docker", cask=True),
+    HomebrewApplication("hammerspoon"),
 ]
 
 
