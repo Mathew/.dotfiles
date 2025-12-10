@@ -3,9 +3,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-local lspconfig = require("lspconfig")
-
-lspconfig.pyright.setup({
+vim.lsp.config("pyright", {
     on_attach = function()
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
         vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, {buffer=0})
@@ -32,17 +30,19 @@ lspconfig.pyright.setup({
         },
     }
 })
+vim.lsp.enable("pyright")
 
-lspconfig.ruff.setup {
+vim.lsp.config("ruff", {
     init_options = {
         settings = {
             args = { "--line-length=88" },
             inlay_hints = true,
         }
     }
-}
+})
+vim.lsp.enable("ruff")
 
-lspconfig.ts_ls.setup{
+vim.lsp.config("ts_ls", {
   init_options = {},
   filetypes = {
     "javascript",
@@ -57,11 +57,14 @@ lspconfig.ts_ls.setup{
           }
       }
   }
-}
+})
+vim.lsp.enable("ts_ls")
 
-lspconfig.gdscript.setup{
+vim.lsp.config("gdscript", {
     cmd = { "nc", "127.0.0.1", "6005"},
     filetypes = { "gd", "gdscript", "gdscript3" },
-    root_dir = lspconfig.util.root_pattern("project.godot", ".git"),
+    root_dir = require("lspconfig.util").root_pattern("project.godot", ".git"),
     single_file_support = true
-}
+})
+vim.lsp.enable("gdscript")
+

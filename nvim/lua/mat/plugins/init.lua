@@ -56,9 +56,6 @@ require("packer").startup(function()
         requires = { {"nvim-lua/plenary.nvim"} }
     })
 
-    -- Tmux / nvim window compat.
-    use ("alexghergh/nvim-tmux-navigation")
-
     -- Tree for current buffer symbols.
     use ("hedyhli/outline.nvim")
 
