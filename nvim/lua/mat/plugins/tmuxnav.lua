@@ -17,7 +17,7 @@ require("nvim-tmux-navigation").setup ({
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "netrw",
   callback = function()
-    vim.api.nvim_buf_del_keymap(0, 'n', '<C-L>')
+    pcall(vim.api.nvim_buf_del_keymap, 0, 'n', '<C-L>')
   end,
 })
 
